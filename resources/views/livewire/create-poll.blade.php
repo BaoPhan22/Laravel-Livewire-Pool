@@ -1,13 +1,13 @@
 <div>
     <form wire:submit.prevent='createPoll'>
-        <label>Poll Title</label>
+        <label class="font-bold">Poll Title</label>
         <input type="text" wire:model='title'>
 
         @error('title')
             <div class="text-red-500">{{ $message }}</div>
         @enderror
 
-        <div class="mb-4 mt-4">
+        <div class="mb-4 mt-4 flex flex-row-reverse">
             <button class="btn" wire:click.prevent='addOption'>Add Option</button>
         </div>
 
@@ -15,7 +15,7 @@
             @foreach ($options as $index => $option)
                 <div class="mb-4">
                     <div class="mb-4">
-                        <label>Option {{ $index + 1 }}</label>
+                        <label class="font-bold">Option {{ $index + 1 }}</label>
                         <div class="flex gap-2">
                             <input type="text" wire:model='options.{{ $index }}'>
                             <button class="btn"
@@ -29,6 +29,6 @@
             @endforeach
         </div>
 
-        <button type="submit" class="btn">Create Poll</button>
+        <button type="submit" class="btn my-3 px-3 py-3 w-full bg-blue-500">Create Poll</button>
     </form>
 </div>

@@ -35,7 +35,19 @@
 <body class="container mx-auto mt-10 mb-10 max-w-lg">
     @livewireScripts
 
-    @livewire('create-poll')
+    <div class="flex flex-col">
+        <div class="w-full">
+            <h2 class="my-4 text-2xl text-center font-bold">Create Poll</h2>
+            @livewire('create-poll')
+        </div>
+
+        {{-- <div class="border my-4"></div> --}}
+
+        <div class="w-full">
+            <h2 class="my-4 text-2xl text-center font-bold">Available Polls</h2>
+            @livewire('polls')
+        </div>
+    </div>
 </body>
 
 </html>
